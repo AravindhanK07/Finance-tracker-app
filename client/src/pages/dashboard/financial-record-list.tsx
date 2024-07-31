@@ -1,4 +1,4 @@
-import { useTable, Column, CellProps, Row } from "react-table";
+import { useTable, Column, CellProps } from "react-table";
 import {
   FinancialRecord,
   useFinancialRecords,
@@ -148,7 +148,7 @@ export const FinancialRecordList = () => {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row, idx) => {
+          {rows.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
