@@ -23,10 +23,13 @@ export const Dashboard = () => {
         <Navigate to="/auth" />
       </SignedOut>
       <SignedIn>
-        <h1>Welcome {user?.firstName}! Here are your finances:</h1>
+        <h1>Welcome {user?.firstName}!!</h1>
         <FinancialRecordForm />
-        <div>Total Monthly:₹{totalMonthly}</div>
+
         <FinancialRecordList />
+        <h4 style={{ textAlign: "end", paddingRight: "22px" }}>
+          Total Monthly : ₹{totalMonthly}
+        </h4>
       </SignedIn>
     </div>
   );

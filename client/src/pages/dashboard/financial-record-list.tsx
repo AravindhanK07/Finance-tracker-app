@@ -136,6 +136,7 @@ export const FinancialRecordList = () => {
 
   return (
     <div className="table-container">
+      <h2>Transaction History</h2>
       <table {...getTableProps()} className="table">
         <thead>
           {headerGroups.map((hg) => (

@@ -9,12 +9,20 @@ function App() {
   return (
     <Router>
       <div className="app-container">
-        <div className="navbar">
-          <Link to="/">Dashboard</Link>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-        </div>
+        <SignedIn>
+          <div className="User-btn">
+            <UserButton
+              appearance={{
+                elements: {
+                  userButtonAvatarBox: {
+                    width: "50px", // Adjust width as needed
+                    height: "50px", // Adjust height as needed
+                  },
+                },
+              }}
+            />
+          </div>
+        </SignedIn>
         <Routes>
           <Route
             path="/"

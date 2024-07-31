@@ -3,35 +3,59 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f7fa;
-  color: #333;
+  color: white;
 }
 
 .app-container {
-  width: 100vw;
+  min-width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: black;
 }
 
-.navbar {
-  background-color: #3498db;
-  padding: 10px 20px;
-  padding-right: 50px;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  color: white;
-  width: 100%;
-  height: 60px;
+.User-btn {
+  position: fixed;
+  padding-right: 15px;
+  padding-top: 15px;
+  right: 0px;
 }
+
 .sign-in-container {
-  margin-top: 300px;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 120px;
+  box-sizing: border-box;
 }
 
 .sign-in-container button {
   margin: 10px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  transition: scale 0.4s;
+}
+
+.sign-in-container button:hover {
+  border: 1px solid white;
+  scale: 1.1;
+}
+
+.sign-in-container img {
+  height: 100%;
+}
+
+.sign-in-container h1,
+p {
+  font-family: "Poppins", serif;
+  color: white;
+  margin: 0;
 }
 
 .navbar a {
@@ -55,4 +79,15 @@ html {
 
 .clerk-user-button:hover {
   color: #e0e0e0;
+}
+
+@media (max-width: 1000px) {
+  .Logo {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .sign-in-container {
+    padding: 0px 20px;
+  }
 }

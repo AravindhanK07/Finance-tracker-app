@@ -31,6 +31,7 @@ export const FinancialRecordForm = () => {
 
   return (
     <div className="form-container">
+      <h2>Add New Transaction</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-field">
           <label>Description:</label>
@@ -56,7 +57,7 @@ export const FinancialRecordForm = () => {
           <label>Category:</label>
           <select
             required
-            className="input"
+            className="custom-select"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
@@ -73,7 +74,7 @@ export const FinancialRecordForm = () => {
           <label>Payment Method:</label>
           <select
             required
-            className="input"
+            className="custom-select"
             value={paymentMethod}
             onChange={(e) => setPaymentMethod(e.target.value)}
           >
