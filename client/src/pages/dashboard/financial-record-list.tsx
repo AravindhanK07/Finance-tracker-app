@@ -5,6 +5,22 @@ import {
 } from "../../contexts/financial-record-context";
 import { useMemo, useState } from "react";
 
+const formatDate = (isoDate: string) => {
+  const date = new Date(isoDate);
+
+  // Format hours and minutes with AM/PM
+  const hours = date.getHours() % 12 || 12; // 12-hour format
+  const minutes = date.getMinutes().toString().padStart(2, "0");
+  const ampm = date.getHours() >= 12 ? "PM" : "AM";
+
+  // Format day, month, and year
+  const day = date.getDate().toString().padStart(2, "0");
+  const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Months are 0-indexed
+  const year = date.getFullYear();
+
+  return `${hours}:${minutes} ${ampm} ${day}/${month}/${year}`;
+};
+
 interface EditableCellProps extends CellProps<FinancialRecord> {
   updateRecord: (rowIndex: number, columnId: string, value: any) => void;
   editable: boolean;
@@ -104,13 +120,8 @@ export const FinancialRecordList = () => {
       {
         Header: "Date",
         accessor: "date",
-        Cell: (props) => (
-          <EditableCell
-            {...props}
-            updateRecord={updateCellRecord}
-            editable={false}
-          />
-        ),
+        // Non-editable date field with AM/PM and formatted date
+        Cell: ({ value }) => formatDate(value),
       },
       {
         Header: "Delete",

@@ -15,11 +15,16 @@ html {
   background-color: black;
 }
 
+.headerSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .User-btn {
-  position: fixed;
-  padding-right: 15px;
-  padding-top: 15px;
-  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sign-in-container {
@@ -90,4 +95,50 @@ p {
   .sign-in-container {
     padding: 0px 20px;
   }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: black;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid white;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+  z-index: 1001;
+}
+
+.close-modal-btn {
+  color: white;
+
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.open-modal-btn {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
